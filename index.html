@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Happy Birthday Preru Madam</title>
+<style>
+body {
+  margin: 0; 
+  padding: 0;
+    width: 100%;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('bg.jpeg') no-repeat center center/cover;
+  overflow-x: hidden;
+  color: white;
+  text-align: center;
+  
+}
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.romantic-heading {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5625rem;
+  text-align: center;
+  color: #e6e6ff;
+  text-shadow: 0 0 5px #00ff00, 0 0 15px #66ffe0, 0 0 25px #66ffe0;
+  animation: floatText 3s ease-in-out infinite;
+  margin-top: 40px;
+}
+
+@keyframes floatText {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.hidden {
+  display: none;
+}
+
+#countdown-container {
+  margin-top: 20vh;
+}
+
+#countdown {
+  font-size: 15px;
+    color: #ffff;
+  text-shadow: 0 0 5px #0000ff, 0 0 15px #80b3ff, 0 0 25px #80b3ff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.celebrate-button {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.125rem;
+  padding: 8px 18px;
+  color: #fff;
+  background: linear-gradient(135deg, #ff4e50, #f9d423);
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.6), 0 0 40px rgba(255, 105, 180, 0.4);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 10;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.celebrate-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.8), 0 0 60px rgba(255, 105, 180, 0.6);
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 182, 193, 0.4), 0 0 25px rgba(255, 182, 193, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 182, 193, 0.7), 0 0 60px rgba(255, 105, 180, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(255, 182, 193, 0.4), 0 0 25px rgba(255, 182, 193, 0.3);
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  z-index: 1;
+}
+
+#cake {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 200px;
+}
+
+#knife {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  width: 80px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+#balloons img {
+  position: absolute;
+  width: 60px;
+  animation: floatUp 5s infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh); }
+  100% { transform: translateY(-100vh); }
+}
+
+#fireworks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://i.gifer.com/VZvx.gif') center center / cover no-repeat;
+  z-index: 0;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px auto;
+}
+
+.gallery img {
+  width: 80px;
+  border: 3px solid #fff;
+  border-radius: 8px;
+  transition: transform 0.5s;
+}
+
+.gallery img:hover {
+  transform: scale(1.2) rotate(5deg);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300&display=swap');
+
+.birthday-card {
+  width: 250px;
+  height: 150px;
+  margin: 60px auto;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1.2s ease-in-out;
+  cursor: pointer;
+}
+
+.birthday-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card-front {
+  background: linear-gradient(135deg, #ffe0f0, #ffc0cb);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: red;
+}
+
+.card-front p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.card-back {
+  background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+  transform: rotateY(180deg);
+  font-family: 'Poppins', sans-serif;
+  color: #a52a2a;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-back h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+  color: #ffff;
+}
+
+.signature {
+  margin-top: 15px;
+  font-style: italic;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.next-surprise-button {
+  display: block;
+  margin: 30px auto;
+  padding: 8px 18px;
+  font-size: 1.125rem;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  background: linear-gradient(135deg, #ff5e62, #ff9966);
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.5), 0 0 30px rgba(255, 105, 180, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: glowPulse 2s infinite ease-in-out;
+}
+
+.next-surprise-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(255, 105, 180, 0.8), 0 0 40px rgba(255, 182, 193, 0.6);
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 182, 193, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 105, 180, 0.8);
+  }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.neon-marquee {
+  display: inline-block;
+  font-family: 'Great Vibes', cursive;
+  font-size: 12px;
+  color: #ffff;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  animation: scrollMarquee 20s linear infinite, neonEffect 0s ease-in-out infinite;
+  background: linear-gradient(135deg, #ffff00, #ffff00, #ffff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes neonEffect {
+  0%, 100% {
+    text-shadow: 
+      0 0 2px #ff007f, 
+      0 0 4px #ff007f, 
+      0 0 6px #ff007f, 
+      0 0 8px #ff80bf, 
+      0 0 10px #ff80bf;
+  }
+  50% {
+    text-shadow: 
+      0 0 10px #ff80bf, 
+      0 0 20px #ff80bf, 
+      0 0 30px #ff007f, 
+      0 0 40px #ff007f;
+  }
+}
+p{
+  font-size: 12px;
+  color: #1aff1a;
+}
+p1{
+  font-size:10px;
+}
+h2{
+  font-size: 18px;
+}
+</style>
+</head>
+<body>
+<Marquee Direction= "Right">
+  <p>Hello Preru Madam Welcome To Your Birthday Surprise Website | This whole coding progromme is maintained by Sayandeep Pradhan | One request to you before using this website properly please read the guidelines carefully | If you facing any problems during this process don't hesitate . Message me on Instagram | This website is safe and secure | We have no bad intention | </p>
+  </Marquee>
+  <div id="countdown-container">
+    <h1 class="romantic-heading">Waiting for the magic moment...</h1>
+    <div id="countdown"></div>
+  </div>
+  <div id="start-section" class="hidden">
+    <button id="celebrateBtn" class="celebrate-button"><b>Let's celebrate 🎉</b></button>
+  </div>
+<div class="marquee-container">
+  <div class="neon-marquee">
+    💖 Something Very Special 💖 is waiting for you Madam 💖 Madam your one time password is "madampreru123"
+  </div>
+</div>
+  <div id="celebration-section" class="hidden">
+    <div class="overlay"></div>
+    <img src="fullcake.png" id="cake" />
+    <img src="knife.png" id="knife" />
+    <audio id="song" src="audio.mp3" preload="auto"></audio>
+    <div id="balloons"></div>
+    <div id="fireworks"></div>
+  </div>
+
+  <div id="gallery-section" class="hidden">
+    <div class="gallery">
+      <img src="1.png" />
+      <img src="2.png" />
+      <img src="3.png" />
+    </div>
+
+   <div class="birthday-card">
+  <div class="card-inner">
+    <div class="card-front">
+      <h2>💝 To My Preru Madam 💝</h2>
+      <p1>Touch to open</p1>
+    </div>
+    <div class="card-back">
+      <h3>Happy Birthday, My Love 🎂</h3>
+      <p1>
+        On this special day, I just want to say<br>
+        You make my world brighter every single day.<br>
+        I promise you I always protect you. Don't left me<br>
+        Wishing you love, laughter, and dreams come true!
+      </p1>
+      <p1 class="signature">— With all my heart ❤️</p1>
+    </div>
+
+
+  </div>
+</div>
+   <button class="next-surprise-button" onclick="openNextSurprise()">
+  🎁 Next Surprise
+</button>
+
+  <script>
+// Countdown until May 29, 2025, at 00:00 (midnight local time)
+const countdownContainer = document.getElementById('countdown-container');
+const countdown = document.getElementById('countdown');
+const startSection = document.getElementById('start-section');
+const celebrationSection = document.getElementById('celebration-section');
+const gallerySection = document.getElementById('gallery-section');
+
+// Set the target date to May 29, 2025, at midnight (00:00) local time
+const targetDate = new Date("2025-05-29T00:00:00"); // This uses local time in the browser
+
+// Debugging output to confirm the target date is set correctly
+console.log("Target Date:", targetDate);
+
+// Run the countdown every second
+const timer = setInterval(() => {
+  const now = new Date().getTime(); // Get current time in milliseconds
+  const distance = targetDate.getTime() - now; // Calculate the difference in time between now and the target date
+
+  if (distance <= 0) {
+    clearInterval(timer); // Stop the countdown when the target date is reached
+    countdownContainer.style.display = "none"; // Hide the countdown section
+    startSection.classList.remove("hidden"); // Show the celebration section
+  } else {
+    // Calculate hours, minutes, and seconds left
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    countdown.innerHTML = `${hours}h ${minutes}m ${seconds}s`; // Display the countdown time
+  }
+}, 1000);
+
+// Event listener for the "Celebrate" button
+document.getElementById('celebrateBtn').addEventListener('click', () => {
+  startSection.classList.add('hidden');
+  celebrationSection.classList.remove('hidden');
+  document.getElementById('song').play();
+  createBalloons();
+});
+
+// Cake cutting action
+document.getElementById('knife').addEventListener('click', () => {
+  document.getElementById('cake').src = 'cutcake.png'; // Update cake image to cut cake
+  setTimeout(() => {
+    celebrationSection.classList.add('hidden');
+    gallerySection.classList.remove('hidden');
+  }, 3000);
+});
+
+// Function to create floating balloons
+function createBalloons() {
+  const balloonContainer = document.getElementById('balloons');
+  for (let i = 0; i < 10; i++) {
+    const b = document.createElement('img');
+    b.src = 'ballons.png'; // Balloon image
+    b.style.left = Math.random() * 90 + 'vw'; // Position balloons randomly on the screen
+    b.style.animationDuration = (3 + Math.random() * 2) + 's'; // Randomize balloon float speed
+    balloonContainer.appendChild(b);
+  }
+}
+
+// Function to open the "Next Surprise" link
+function openNextSurprise() {
+  window.open("surprise.html", "_blank");
+}
+
+</script>
+</body>
+</html>

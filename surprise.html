@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Happy Birthday Preru Madam</title>
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffebee;
+  width: 100%;
+  height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background-image: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    color: #d81b60;
+}
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    margin: 20px;
+}
+
+h1 {
+    color: #d81b60;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.password-section, .wish-section, .questions-section {
+    display: none;
+}
+
+.active {
+    display: block;
+    animation: fadeIn 1s;
+}
+
+input, textarea, select {
+    width: 80%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #f8bbd0;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #d81b60;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin: 15px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background-color: #c2185b;
+    transform: scale(1.05);
+}
+
+.heart {
+    color: #d81b60;
+    font-size: 2em;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hidden {
+    display: none;
+}
+
+.romantic-text {
+    font-style: italic;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+.question {
+    margin: 20px 0;
+    text-align: left;
+    padding: 0 10%;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #880e4f;
+}
+
+#passwordError, #formError {
+    color: red;
+    display: none;
+    margin-top: 10px;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="password-section active">
+            <h1>Welcome to a Special Message</h1>
+            <p>Please enter the password to continue:<br>Check my past insta msg with u you can find there</p>
+            <input type="password" id="passwordInput" placeholder="Enter password" required>
+            <button onclick="checkPassword()">Submit</button>
+            <p id="passwordError">Incorrect password. Please try again.</p>
+        </div>
+        
+        <div class="wish-section">
+            <h1>Happy Birthday Love <span class="heart">❤️</span></h1>
+            <h2>Preru Madam</h2>
+            <div class="romantic-text">
+                <p>On this special day, I want you to know how much you mean to me.</p>
+                <p>Your smile brightens my darkest days, and your laughter is my favorite melody.</p>
+                <p>May this year bring you all the happiness, love, and success you deserve.</p>
+                <p>You are truly one of a kind, and I'm so grateful to have you in my life.</p>
+            </div>
+            <button onclick="showQuestions()">Continue</button>
+        </div>
+        
+        <div class="questions-section">
+            <h2>I have some questions for you...</h2>
+            
+            <form id="birthdayForm">
+                <div class="question">
+                    <label for="q1">1. Am I bothering you always?</label>
+                    <select id="q1" name="q1" required>
+                        <option value="">Select an option</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                        <option value="Sometimes">Sometimes</option>
+                    </select>
+                </div>
+                
+                <div class="question">
+                    <label for="q2">2. Do you love anyone?</label>
+                    <select id="q2" name="q2" required>
+                        <option value="">Select an option</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                       
+                    </select>
+                </div>
+                
+                <div class="question">
+                    <label for="q3">3. Are you angry with me?</label>
+                    <select id="q3" name="q3" required>
+                        <option value="">Select an option</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                        <option value="A little">A little</option>
+                    </select>
+                </div>
+                
+                <div class="question">
+                    <label for="q4">4. Do you love me?</label>
+                    <select id="q4" name="q4" required>
+                        <option value="">Select an option</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                       
+                    </select>
+                </div>
+                
+                <button type="button" onclick="validateForm()">Submit Answers</button>
+                <p id="formError">Please answer all questions before submitting.</p>
+            </form>
+            
+            <button id="surpriseBtn" class="hidden" onclick="openSurprise()">This is Surprise</button>
+        </div>
+    </div>
+    <script>
+// Password Check (Default: "madampreru123")
+function checkPassword() {
+    const password = document.getElementById('passwordInput').value;
+    const correctPassword = "madampreru123"; // Change this to your preferred password
+    const errorElement = document.getElementById('passwordError');
+    
+    if (password === correctPassword) {
+        document.querySelector('.password-section').classList.remove('active');
+        document.querySelector('.wish-section').classList.add('active');
+        errorElement.style.display = 'none';
+    } else {
+        errorElement.style.display = 'block';
+    }
+}
+
+// Show Questions
+function showQuestions() {
+    document.querySelector('.wish-section').classList.remove('active');
+    document.querySelector('.questions-section').classList.add('active');
+}
+
+// Form Validation
+function validateForm() {
+    const q1 = document.getElementById('q1').value;
+    const q2 = document.getElementById('q2').value;
+    const q3 = document.getElementById('q3').value;
+    const q4 = document.getElementById('q4').value;
+    const errorElement = document.getElementById('formError');
+    
+    if (q1 && q2 && q3 && q4) {
+        errorElement.style.display = 'none';
+        document.getElementById('surpriseBtn').classList.remove('hidden');
+        window.scrollTo(0, document.body.scrollHeight);
+        
+        // Uncomment to add email functionality:
+        // sendAnswersToEmail(q1, q2, q3, q4);
+    } else {
+        errorElement.style.display = 'block';
+    }
+}
+
+// Open Surprise Link
+function openSurprise() {
+    window.open('https://drive.google.com/file/d/1Ugv35IuIbCUdBCEvqVi38_BqJ6fKlbKn/view?usp=drive_link', '_blank');
+}
+
+// Allow pressing Enter in password field
+document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        checkPassword();
+    }
+});
+
+/* Uncomment this function if you want email integration
+function sendAnswersToEmail(q1, q2, q3, q4) {
+    // Use FormSubmit.co or your preferred email service
+    fetch('https://formsubmit.co/ajax/sayandeep06@yahoo.com', {
+        method: 'POST',
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            "Bothering": q1,
+            "Loves someone": q2,
+            "Angry": q3,
+            "Loves me": q4
+        })
+    });
+}
+*/
+</script>
+</body>
+</html>
